@@ -28,6 +28,8 @@ class GDrive:
     def downloads_images(self, drive_http, folder_pass):
         pass
 
+
+
     def find(self, key_column, id, value_column):
         row = util.get_row_by_keys(self.df, key_value=id, key_column=key_column)
         #print('--', row)
@@ -68,7 +70,7 @@ class GDrive:
     def generate_from_main(self, category=[], key=[]):
 
 
-        fc = PandasForm.FormCreator()
+        fc = PandasForm.SheetCreator()
 
 
 
@@ -97,7 +99,7 @@ class GDrive:
                 ##graph_wks.insert_rows(1, number=1, values=[1,2,3], inherit=False)
                 #title = '_'.join([str(arg) for arg in requst_arg])
                 title = requst_arg[0]
-                fc = PandasForm.FormCreator(title=title, folder_id=current_folder)
+                fc = PandasForm.SheetCreator(title=title, folder_id=current_folder)
                 fc.create_from_standart(dates=util.get_dates(2, 3, 7))
                 #print(filter_df[keys], filter_df[keys].values)
                 fc.add_objects(key_col=keys, key_val=filter_df[keys].values)

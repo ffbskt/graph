@@ -52,6 +52,7 @@ class Graph:
             # print(util.get_row_by_keys(tdf, key.values, key_col).empty)
             if util.get_row_by_keys(tdf, key.values,
                                     key_col).empty:  # util.get_row_by_keys(tdf, key.values[0], key_col):
+                print('ok,', key.values)
                 row = util.format_row(tdf, list(key.values), key_col, blanc_row)
                 new_key.append(row)
                 last_row = twks.get_as_df().shape[0] + 1

@@ -3,7 +3,7 @@ import pandas as pd
 import re
 import pygsheets
 
-class FormCreator: # refactor! its sheet creator
+class SheetCreator: # refactor! its sheet creator
     """
     Pandas Form with init
     Try to solve problem with add formula
@@ -120,6 +120,9 @@ class StandartFormLibrary:
         self.formulas.extend([''] * (len(self.header1) - len(self.formulas)))
 
 
+
+
+
 if __name__ == "__main__":
 
     d = util.get_dates(2,3,7)
@@ -132,7 +135,7 @@ if __name__ == "__main__":
     #print(stl.formulas)
 
     ##################
-    gf = FormCreator('t1', header=stl.header1, formulas=stl.formulas, folder_id='1ncBfOFctKPVRKBYwrc58U5_UaD-d0D30')
+    gf = SheetCreator('t1', header=stl.header1, formulas=stl.formulas, folder_id='1ncBfOFctKPVRKBYwrc58U5_UaD-d0D30')
 
     gf.add_objects(key_col=['ФИО', 'Группа'], key_val=[['art', 109], ['ben', 103]])
     pg = pygsheets.authorize(outh_file='other.json')
